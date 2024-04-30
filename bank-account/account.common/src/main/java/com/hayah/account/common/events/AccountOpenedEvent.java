@@ -13,10 +13,23 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class AccountOpenedEvent extends BaseEvent {
     private String accountHolder;
     private AccountType accountType;
     private Date createdDate;
     private double openingBalance;
+
+    @Builder
+    public AccountOpenedEvent(String id,
+                              int version,
+                              String accountHolder,
+                              AccountType accountType,
+                              Date createdDate,
+                              double openingBalance) {
+        super(id, version);
+        this.accountHolder = accountHolder;
+        this.accountType = accountType;
+        this.createdDate = createdDate;
+        this.openingBalance = openingBalance;
+    }
 }

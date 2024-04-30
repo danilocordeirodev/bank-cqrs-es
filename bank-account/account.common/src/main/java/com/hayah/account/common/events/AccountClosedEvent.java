@@ -5,6 +5,10 @@ import lombok.Builder;
 import lombok.Data;
 
 @Data
-@Builder
 public class AccountClosedEvent extends BaseEvent {
+    @Builder
+    public AccountClosedEvent(String id,
+                               int version) {
+        super(id, version);
+    }
 }
